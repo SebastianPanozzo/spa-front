@@ -26,7 +26,7 @@ function Home() {
     return (
         <div className="pt-5 pt-lg-0" id="home"
             style={{
-                backgroundImage: `url('/img/bgDark.webp')`,
+                backgroundImage: `url('../img/bgDark.webp')`,
 
                 backgroundSize: "cover",
                 backgroundPosition: "center",
