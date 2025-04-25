@@ -1,0 +1,71 @@
+/* Reset básico y fuente principal */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #ffffff;
+    color: #007bff; /* Azul principal para textos */
+  }
+  
+  body, html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Imágenes responsivas y con borde suave */
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  /* Botones personalizados */
+  button {
+    background-color: #e83e8c; /* Rosa */
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #28a745; /* Verde al pasar el mouse */
+  }
+  
+  /* Fuente para código */
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  }
+  
+  /* Secciones genéricas */
+  section {
+    padding: 4rem 1rem;
+    background-color: #ffffff;
+  }
+  
+  /* Títulos con estilo */
+  h1, h2, h3, h4 {
+    font-weight: bold;
+    color: #e83e8c;
+  }
+  
+  /* Tarjetas */
+  .card {
+    border: 2px solid #007bff;
+    border-radius: 16px;
+    background-color: #ffffff;
+    color: #007bff;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: scale(1.02);
+    border-color: #28a745;
+  }
+  
+  /* Contenedor general */
+  .container {
+    max-width: 1200px;
+  }
+  
