@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import servicios from '../data/serviciosData';
 import axios from 'axios';
-import isLoggedIn from '../utils/isLoggedIn';
+import isLoggedIn from '../utils/IsLoggedIn.jsx'; // Asegúrate de que el nombre y la extensión sean correctos
 
 // Lista de servicios grupales
 const SERVICIOS_GRUPALES = ['Clase de Yoga', 'Taller de Meditación', 'Pilates Grupal'];
