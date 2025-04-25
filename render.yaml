@@ -2,5 +2,5 @@ services:
   - type: web
     name: spa-sentirse-bien
     env: static
-    buildCommand: npm run render-build
-staticPublishPath: .
+    buildCommand: ./build.sh
+    staticPublishPath: dist
