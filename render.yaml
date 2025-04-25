@@ -3,4 +3,4 @@ services:
     name: spa-sentirse-bien
     env: static
     buildCommand: npm run build
-    staticPublishPath: dist
+    staticPublishPath: ./dist
