@@ -14,6 +14,8 @@ const Registro = () => {
     confirmarContrasena: "",
   });
 
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -56,13 +58,13 @@ const Registro = () => {
 
     const turbulence = document.querySelector('#disFilter feTurbulence');
     let frameId;
-    let base = 0.005;
-    let direction = 1;
+    let base = 0.004;
+    let direction = 0.1;
 
     const animate = () => {
       if (!turbulence) return;
 
-      base += direction * 0.00002;
+      base += direction * 0.000015;
       if (base >= 0.01 || base <= 0.004) direction *= -1;
 
       turbulence.setAttribute('baseFrequency', base.toString());
@@ -76,15 +78,48 @@ const Registro = () => {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    // Limpiar mensaje de error cuando el usuario comienza a escribir
+    if (error) setError("");
+  };
+
+  const validateForm = () => {
+    // Validar contraseñas
+    if (formData.contrasena !== formData.confirmarContrasena) {
+      setError("Las contraseñas no coinciden");
+      return false;
+    }
+
+    // Validar CUIL
+    if (!/^\d{11}$/.test(formData.cuil)) {
+      setError("El CUIL debe contener exactamente 11 números");
+      return false;
+    }
+
+    // Validar teléfono
+    if (!/^\d{10,15}$/.test(formData.telefono)) {
+      setError("El teléfono debe contener entre 10 y 15 números");
+      return false;
+    }
+
+    // Validar email
+    if (!/\S+@\S+\.\S+/.test(formData.correo)) {
+      setError("Por favor ingrese un email válido");
+      return false;
+    }
+
+    return true;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (formData.contrasena !== formData.confirmarContrasena) {
-      alert("Las contraseñas no coinciden");
+    setError("");
+    
+    // Validar formulario
+    if (!validateForm()) {
       return;
     }
+
+    setLoading(true);
 
     try {
       const cliente = {
@@ -104,7 +139,26 @@ const Registro = () => {
       }
     } catch (error) {
       console.error("Error al registrar:", error);
-      alert("Error al registrar. Intenta nuevamente.");
+      
+      // Manejar errores específicos
+      if (error.response) {
+        // El servidor respondió con un código de error
+        const { data, status } = error.response;
+        
+        if (status === 400 && data.mensaje === "El nombre de usuario ya está registrado") {
+          setError("Este nombre de usuario ya está registrado. Por favor elige otro.");
+        } else {
+          setError(data.mensaje || "Error al registrar. Intenta nuevamente.");
+        }
+      } else if (error.request) {
+        // No se obtuvo respuesta
+        setError("No se pudo conectar con el servidor. Verifica tu conexión a internet.");
+      } else {
+        // Error en la configuración de la petición
+        setError("Ocurrió un error al enviar la solicitud. Intenta nuevamente.");
+      }
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -133,7 +187,7 @@ const Registro = () => {
 
         <image
           id="distorted-image"
-          xlinkHref="https://github.com/SebastianPanozzo/spa-proyecto/blob/master/Metodolog-a-de-Sistemas-1/public/imagenes/fondo_Register_login.jpeg?raw=true"
+          xlinkHref="https://i.ytimg.com/vi/kDRI_E-619k/maxresdefault.jpg"
           x="-10%"
           y="-10%"
           width="120%"
@@ -153,6 +207,12 @@ const Registro = () => {
             </div>
 
             <div className="form-container shadow p-4">
+              {error && (
+                <div className="alert alert-danger" role="alert">
+                  {error}
+                </div>
+              )}
+              
               <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                   <input
@@ -192,7 +252,7 @@ const Registro = () => {
                     type="text"
                     name="cuil"
                     className="form-control"
-                    placeholder="CUIL"
+                    placeholder="CUIL (11 dígitos)"
                     value={formData.cuil}
                     onChange={handleChange}
                     required
@@ -210,7 +270,7 @@ const Registro = () => {
                     onChange={handleChange}
                     required
                     pattern="\d{10,15}"
-                    title="Ingrese un teléfono válido"
+                    title="Ingrese un teléfono válido (10-15 dígitos)"
                   />
                 </div>
                 <div className="mb-3">
@@ -233,6 +293,7 @@ const Registro = () => {
                     value={formData.contrasena}
                     onChange={handleChange}
                     required
+                    minLength="6"
                   />
                 </div>
                 <div className="mb-4">
@@ -246,8 +307,13 @@ const Registro = () => {
                     required
                   />
                 </div>
-                <button type="submit" className="btn btn-primary w-100" style={{ backgroundColor: "#ff69b4", borderColor: "#ff69b4" }}>
-                  Registrarse
+                <button 
+                  type="submit" 
+                  className="btn btn-primary w-100" 
+                  style={{ backgroundColor: "#ff69b4", borderColor: "#ff69b4" }}
+                  disabled={loading}
+                >
+                  {loading ? "Registrando..." : "Registrarse"}
                 </button>
               </form>
             </div>

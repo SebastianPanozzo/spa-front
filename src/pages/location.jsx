@@ -20,7 +20,9 @@ function Location() {
   };
 
   return (
-    <div className="py-4" id="location" style={{ background: 'rgba(87, 184, 42, 0.4)' }}>
+    <div className="py-4" id="location" style={{
+      background: "linear-gradient(to bottom, rgb(1, 194, 165),rgb(1, 146, 129))"
+    }}>
       <div className="container min-vh-100 d-flex flex-column align-items-center justify-content-center">
         <div className="row text-center mb-4">
           <h2

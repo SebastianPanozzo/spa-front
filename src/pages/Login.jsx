@@ -60,13 +60,13 @@ const Login = () => {
 
     const turbulence = document.querySelector('#disFilter feTurbulence');
     let frameId;
-    let base = 0.005;
-    let direction = 1;
+    let base = 0.004;
+    let direction = 0.1;
 
     const animate = () => {
       if (!turbulence) return;
 
-      base += direction * 0.00002;
+      base += direction * 0.000015;
       if (base >= 0.01 || base <= 0.004) direction *= -1;
 
       turbulence.setAttribute('baseFrequency', base.toString());
@@ -157,7 +157,7 @@ const Login = () => {
 
         <image
           id="distorted-image"
-          xlinkHref="https://github.com/SebastianPanozzo/spa-proyecto/blob/master/Metodolog-a-de-Sistemas-1/public/imagenes/fondo_Register_login.jpeg?raw=true"
+          xlinkHref="https://i.ytimg.com/vi/kDRI_E-619k/maxresdefault.jpg"
           x="-10%"
           y="-10%"
           width="120%"

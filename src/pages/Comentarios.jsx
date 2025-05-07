@@ -151,6 +151,7 @@ const Comentarios = () => {
       zIndex: 10,
       width: "100%",
       paddingBottom: "50px",
+      paddingTop: "120px", // Añadido padding superior para alejar el contenido del borde superior
     },
     background: {
       position: "fixed",
@@ -300,6 +301,7 @@ const Comentarios = () => {
       minHeight: "100vh",
       position: "relative",
       zIndex: 5,
+      paddingTop: "50px", // Añadido padding adicional para alejar el contenido
     }
   };
 

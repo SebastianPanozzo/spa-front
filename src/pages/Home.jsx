@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import img from "../../public/svg/img1.svg";
 
 function Home() {
     const navigate = useNavigate();
@@ -15,7 +14,6 @@ function Home() {
         `
     };
 
-    // Función para manejar el scroll hacia la sección "about"
     const handleScrollToAbout = () => {
         const aboutSection = document.getElementById("about");
         if (aboutSection) {
@@ -24,19 +22,30 @@ function Home() {
     };
 
     return (
-        <div className="pt-5 pt-lg-0" id="home"
+        <div
+            className="pt-5 pt-lg-0 position-relative"
+            id="home"
             style={{
-                backgroundImage: `url('../img/bgDark.webp')`,
-
-                backgroundSize: "cover",
+                backgroundImage: `url('../img/Home.jpeg')`,
+                backgroundSize: "cover",              // llena toda la pantalla proporcionalmente
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundAttachment: "fixed",
+                minHeight: "100vh",                    // asegura que cubra toda la pantalla
             }}
         >
-            <div className="container min-vh-100 d-flex flex-column align-items-center justify-content-center mt-4 mt-lg-0">
+            {/* Capa oscura opcional para mejorar contraste */}
+            <div
+                className="position-absolute top-0 start-0 w-100 h-100"
+                style={{ backgroundColor: "rgba(0, 0, 0, 0.3)", zIndex: 0 }}
+            />
+
+            <div
+                className="container min-vh-100 d-flex flex-column align-items-center justify-content-center mt-4 mt-lg-0 position-relative"
+                style={{ zIndex: 1 }}
+            >
                 <div className="row align-items-center">
-                    <div className="col-12 col-lg-6 text-center text-lg-start">
+                    <div className="col-12 text-center text-lg-start">
                         <h1
                             style={{
                                 ...textStyleWithStroke,
@@ -65,14 +74,11 @@ function Home() {
                             <button
                                 className="btn btn-outline-light btn-lg fw-bold"
                                 style={{ fontWeight: "bold" }}
-                                onClick={handleScrollToAbout} // Usamos la nueva función para el scroll
+                                onClick={handleScrollToAbout}
                             >
                                 Conócenos
                             </button>
                         </div>
-                    </div>
-                    <div className="col-12 col-lg-6 d-flex justify-content-center mt-4 mt-lg-0">
-                        <img className="img-fluid" src={img} alt="imagen de spa" />
                     </div>
                 </div>
             </div>

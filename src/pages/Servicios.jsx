@@ -129,7 +129,7 @@ const Servicios = () => {
 
   const ServicioCardConReserva = ({ servicio, destacado }) => {
     const isSelected = destacado;
-
+  
     return (
       <div className={`card h-100 shadow ${isSelected ? 'border border-4 border-primary' : ''}`}>
         <div
@@ -151,11 +151,19 @@ const Servicios = () => {
             <span className="badge bg-warning position-absolute m-2">Destacado</span>
           )}
         </div>
-        <div className="card-body">
+        <div className="card-body d-flex flex-column">
           <h5 className="card-title" style={pinkTextStyle}>{servicio.nombre}</h5>
-          <p className="card-text" style={pinkTextStyle}>{servicio.descripcion}</p>
-          <p className="card-text fw-bold" style={lightBlueStyle}>${servicio.precio}</p>
-          <div className="d-flex justify-content-between">
+          
+          {/* Contenedor con altura fija para la descripción */}
+          <div style={{ height: "80px", overflow: "auto", marginBottom: "10px" }}>
+            <p className="card-text" style={pinkTextStyle}>{servicio.descripcion}</p>
+          </div>
+          
+          {/* Precio siempre en la misma posición */}
+          <p className="card-text fw-bold mb-3" style={lightBlueStyle}>${servicio.precio}</p>
+          
+          {/* Botones siempre al final de la tarjeta */}
+          <div className="mt-auto d-flex justify-content-between">
             <button
               className="btn"
               style={{ ...lightBlueStyle, border: "1px solid #4fc3f7", backgroundColor: "transparent" }}
@@ -175,13 +183,13 @@ const Servicios = () => {
       </div>
     );
   };
-
+  
   return (
     <div
       id="servicios"
       className="bg-light"
       style={{
-        backgroundImage: `url('/img/bgServices.jpg')`,
+        backgroundImage: `url('/img/BgServices.jpeg')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

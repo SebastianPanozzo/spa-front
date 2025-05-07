@@ -44,7 +44,7 @@ const Empleo = () => {
     const turbulence = document.querySelector('#empleoDisFilter feTurbulence');
     let frameId;
     let base = 0.005;
-    let direction = 1;
+    let direction = 0.1;
 
     const animate = () => {
       if (!turbulence) return;
@@ -90,7 +90,7 @@ const Empleo = () => {
 
         <image
           id="empleo-distorted-image"
-          xlinkHref="https://github.com/SebastianPanozzo/spa-proyecto/blob/master/Metodolog-a-de-Sistemas-1/public/imagenes/fondo_Register_login.jpeg?raw=true"
+          xlinkHref="https://images.unsplash.com/photo-1437719417032-8595fd9e9dc6?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&s=f19a8fc678bb87aedd5f5959022bbf71"
           x="-10%"
           y="-10%"
           width="120%"

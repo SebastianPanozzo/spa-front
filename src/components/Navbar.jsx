@@ -76,7 +76,7 @@ const Navbar = () => {
   // Estilo más intenso para la cursiva
   const italicStyle = {
     fontStyle: "italic",
-    fontWeight: "400",
+    fontWeight: "2000",
     fontFamily: "'Playfair Display', serif",  // Fuente con cursiva más pronunciada
     transform: "skewX(-15deg)",               // Inclinación adicional
     display: "inline-block",                  // Para que la transformación funcione
@@ -86,7 +86,7 @@ const Navbar = () => {
   // Style for hover effect
   const navItemHoverStyle = `
     .custom-nav-item .nav-link:hover {
-      background-color: #c1e1c1; /* Pastel green background on hover */
+      background-color:rgb(1, 224, 150); /* Pastel green background on hover */
       border-radius: 4px;
       transition: background-color 0.3s;
     }
@@ -96,7 +96,7 @@ const Navbar = () => {
 
   return (
     <div className="fixed-top" style={{
-      backgroundColor: "white",
+      backgroundColor: "rgba(252, 252, 252, 0.72)",
       borderBottom: "1px solid rgba(0,0,0,0.1)",
     }}>
       {/* Add the style tag for hover effect */}
@@ -112,7 +112,7 @@ const Navbar = () => {
                 alt="Logo Spa" 
                 style={{ width: "40px", height: "40px", marginRight: "10px" }} 
               />
-              <span style={italicStyle}>Sentirse Bien Spa</span> 
+              <span style={italicStyle}>Spa Sentirse Bien</span> 
             </Link>
 
             {/* Botón responsive */}
@@ -211,7 +211,7 @@ const Navbar = () => {
                   </span>
                   <button
                     className="btn"
-                    style={{ backgroundColor: "#f06292", color: "white" }}
+                    style={{ backgroundColor: "rgb(1, 211, 148)", color: "white" }}
                     onClick={handleLogout}
                   >
                     Cerrar Sesión
@@ -221,7 +221,7 @@ const Navbar = () => {
                 <div className="d-flex">
                   <button
                     className="btn me-2 px-4"
-                    style={{ backgroundColor: "#f06292", color: "white" }}
+                    style={{ backgroundColor: "rgb(1, 211, 148)", color: "white" }}
                     onClick={() => {
                       closeMenu();
                       navigate("/login");
@@ -231,7 +231,7 @@ const Navbar = () => {
                   </button>
                   <button
                     className="btn"
-                    style={{ backgroundColor: "#f06292", color: "white" }}
+                    style={{ backgroundColor: "rgb(1, 211, 148)", color: "white" }}
                     onClick={() => {
                       closeMenu();
                       navigate("/registro");

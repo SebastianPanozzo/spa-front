@@ -5,7 +5,7 @@ const SobreNosotros = () => {
     fontSize: '3rem',
     fontWeight: 800,
     color: '#fff',
-    textShadow: '1px 1px 3px rgba(0, 0, 0, 0.5)'
+    textShadow: '1px 1px 3px rgba(0, 0, 0, 0.5)',
   };
 
   const paragraphStyle = {
@@ -13,28 +13,42 @@ const SobreNosotros = () => {
     fontWeight: 500,
     color: '#fff',
     lineHeight: '1.8',
-    textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)'
+    textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
   };
 
   const subtitleStyle = {
     ...titleStyle,
     fontSize: '1.75rem',
-    marginBottom: '0.5rem'
+    marginBottom: '0.5rem',
   };
 
   return (
-    <div id="about" style={{ background: 'rgba(159, 221, 162, 0.5)' }}>
+    <div 
+      id="about" 
+      style={{ 
+        background: 'linear-gradient(to bottom, rgb(1, 211, 148), rgb(1, 194, 165))', // Degradado de verde a verde azulado
+      }}
+    >
       <div className="container min-vh-100 d-flex flex-column align-items-center justify-content-center">
         <div className="row text-center my-4">
           <h2 style={titleStyle}>Quienes Somos</h2>
           <p style={paragraphStyle}>
-            Fundado en 2010, Spa Sentirse Bien nació con la visión de crear un espacio donde nuestros clientes puedan 
+            Fundado en 2010, Spa Sentirse Bien nació con la visión de crear un espacio donde nuestros clientes puedan
             reconectar con la naturaleza y encontrar un equilibrio perfecto entre cuerpo y mente.
           </p>
         </div>
         <div className="row mt-lg-4">
           <div className="col-12 col-lg-6 d-flex align-items-center justify-content-center">
-          <img className="img-fluid rounded rounded-4 shadow-sm" src="../img/team.webp" alt="imagen de spa" />
+            <img
+              className="img-fluid rounded rounded-4 shadow-sm"
+              src="../img/team.jpeg"
+              alt="imagen de spa"
+              style={{
+                height: '50vh', // Ajusta la altura de la imagen
+                objectFit: 'cover', // Cubre el contenedor sin deformar
+                width: '100%', // Asegura que la imagen ocupe todo el ancho
+              }}
+            />
           </div>
 
           <div className="col-12 col-lg-6 d-flex flex-column align-items-center justify-content-between mt-4 mt-lg-0 text-center text-lg-start">
@@ -70,4 +84,3 @@ const SobreNosotros = () => {
 };
 
 export default SobreNosotros;
-

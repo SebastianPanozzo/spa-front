@@ -104,7 +104,7 @@ const Contacto = () => {
   const styles = {
     container: {
       position: "relative",
-      minHeight: "100vh",
+      minHeight: "135vh",
       overflow: "hidden",
     },
     formContainer: {
@@ -116,7 +116,7 @@ const Contacto = () => {
       top: 0,
       left: 0,
       width: "100vw",
-      height: "100vh",
+      height: "135vh",
       background: "linear-gradient(to top, rgba(20, 100, 70, 0.85), rgba(10, 70, 50, 0.9))",
       opacity: 0.85,
       mixBlendMode: "normal",
@@ -126,7 +126,7 @@ const Contacto = () => {
       top: 0,
       left: 0,
       width: "100vw",
-      height: "100vh",
+      height: "135vh",
       mixBlendMode: "soft-light",
     },
     surfaceBefore: {
@@ -134,7 +134,7 @@ const Contacto = () => {
       bottom: 0,
       left: 0,
       width: "100vw",
-      height: "100vh",
+      height: "135vh",
       backgroundImage:
         "url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MTEyMTIwOTZ8&ixlib=rb-4.0.3&q=80&w=400')",
       backgroundRepeat: "repeat-x",
@@ -149,7 +149,7 @@ const Contacto = () => {
       bottom: 0,
       left: 0,
       width: "100vw",
-      height: "100vh",
+      height: "135vh",
       backgroundImage:
         "url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MTEyMTIwOTZ8&ixlib=rb-4.0.3&q=80&w=400')",
       backgroundRepeat: "repeat-x",
@@ -165,7 +165,7 @@ const Contacto = () => {
       top: 0,
       bottom: 0,
       width: "100vw",
-      height: "100vh",
+      height: "135vh",
       filter: "url(#underwaterNoise)",
     },
     causticsBefore: {
@@ -174,7 +174,7 @@ const Contacto = () => {
       bottom: 0,
       left: 0,
       width: "100vw",
-      height: "100vh",
+      height: "135vh",
       backgroundImage:
         "url('https://images.unsplash.com/photo-1568145675395-66a2eda0c6d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MTEyMTAwNjh8&ixlib=rb-4.0.3&q=80&w=400')",
       backgroundRepeat: "repeat",
@@ -189,7 +189,7 @@ const Contacto = () => {
       bottom: 0,
       left: 0,
       width: "100vw",
-      height: "100vh",
+      height: "135vh",
       backgroundImage:
         "url('https://images.unsplash.com/photo-1568145675395-66a2eda0c6d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MTEyMTAwNjh8&ixlib=rb-4.0.3&q=80&w=400')",
       backgroundRepeat: "repeat",
@@ -206,7 +206,7 @@ const Contacto = () => {
       top: 0,
       left: 0,
       width: "100vw",
-      height: "100vh",
+      height: "135vh",
       opacity: 0.6,
     },
     sunLayer: {
@@ -291,26 +291,23 @@ const Contacto = () => {
           <div className="row justify-content-center">
             <div className="col-md-5 mb-4">
               <div style={styles.infoCard}>
-                <h2 className="mb-4">¡Hablemos!</h2>
+                <h2 className="mb-4">Nuestro Numero de Telefono</h2>
                 <div className="mb-4">
                   <ul className="list-unstyled">
-                    <li className="mb-2">
-                      <i className="bi bi-geo-alt-fill text-light me-2"></i>
-                      Av. Santa Fe 2271 - 1ºA (CABA)
-                    </li>
+                    
                     <li className="mb-2">
                       <i className="bi bi-telephone-fill text-light me-2"></i>
                       01140461910
                     </li>
                     <li className="mb-2">
                       <i className="bi bi-envelope-fill text-light me-2"></i>
-                      info@spasentirsebien.com
+                      
                     </li>
                   </ul>
                 </div>
                 <div>
-                  <h4 className="mb-3">Horarios de atención</h4>
-                  <p>Lunes a Domingo: 12:00 - 22:00</p>
+                  <h4 className="mb-3">Nuestro Correo Electronico</h4>
+                  <p>info@spasentirsebien.com</p>
                 </div>
               </div>
             </div>

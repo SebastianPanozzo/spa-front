@@ -2,31 +2,47 @@ import React from "react";
 
 const Otros = () => {
   const backgroundStyle = {
-    backgroundImage: "url('/img/logoSpa.jpg')",
+    backgroundImage: "url('/img/Otros.jpeg')",
     backgroundSize: "cover",
     backgroundPosition: "center",
-    filter: "blur(1px)",
     position: "absolute",
     top: 0,
     left: 0,
     width: "100%",
     height: "100%",
     zIndex: -1,
-    opacity: 0.2,
+  };
+
+  const contentWrapperStyle = {
+    minHeight: "100vh",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    position: "relative",
+    padding: "2rem", // asegura separación mínima en todos los lados
+    boxSizing: "border-box",
   };
 
   const contentStyle = {
-    position: "relative",
-    zIndex: 1,
-    backgroundColor: "rgba(255, 255, 255, 0.85)",
+    backgroundColor: "rgba(255, 255, 255, 0.53)", // mismo color, más transparente
     padding: "2rem",
     borderRadius: "8px",
+    color: "white",
+    textShadow: `
+      1px 1px 2px black,
+      -1px -1px 2px black,
+      1px -1px 2px black,
+      -1px 1px 2px black
+    `,
+    maxWidth: "800px",
+    width: "100%",
+    boxSizing: "border-box",
   };
 
   return (
-    <div className="position-relative" style={{ minHeight: "100vh" }}>
+    <div style={contentWrapperStyle}>
       <div style={backgroundStyle}></div>
-      <div className="container my-5" style={contentStyle}>
+      <div style={contentStyle}>
         <h2 className="mb-4">Términos y Condiciones</h2>
         <p>
           Al acceder a nuestro sitio web y utilizar nuestros servicios, usted acepta estar sujeto a los siguientes términos y condiciones. Si no está de acuerdo con alguno de estos términos, por favor no utilice nuestro sitio.
@@ -52,4 +68,3 @@ const Otros = () => {
 };
 
 export default Otros;
-

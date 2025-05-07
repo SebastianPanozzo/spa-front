@@ -2,7 +2,18 @@ import React from "react";
 
 const Anuncios = () => {
   return (
-    <div style={{ marginTop: "200px", backgroundColor: "#d4edda", padding: "60px 0" }}>
+    <div
+      style={{
+        marginTop: "0px",
+        padding: "400px 0",
+        backgroundImage: "url('../img/Anuncios.jpeg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        color: "white",
+        textShadow: "1px 1px 2px black"
+      }}
+    >
       <div className="container">
         <h2 className="mb-4 text-center">Anuncios</h2>
         <p className="text-center">
