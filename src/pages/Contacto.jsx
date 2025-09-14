@@ -71,7 +71,7 @@ const Contacto = () => {
 
     // Validación: ¿Usuario logueado?
     if (!usuario) {
-      alert("Debes iniciar sesión para enviar un mensaje.");
+      alert("Debes iniciar sesión para enviar un meansaje.");
       navigate("/login");
       return;
     }
